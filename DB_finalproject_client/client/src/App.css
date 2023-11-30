@@ -136,11 +136,11 @@ div {
 }
 
 .centered-line {
-  width: 70%;        /* 設置寬度為 80% */
-  margin: 0 auto;    /* 上下邊距為 0，左右自動，實現水平居中 */
-  border: none;      /* 可以選擇移除邊框，視視覺需求而定 */
-  height: 1px;       /* 設置分隔線高度，可根據需求調整 */
-  background-color: #797979; /* 設置分隔線顏色，這裡是黑色，可以根據您的設計調整 */
+  width: 70%;       
+  margin: 0 auto;    
+  border: none;      
+  height: 1px;      
+  background-color: #797979; 
 }
 
 input {
