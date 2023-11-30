@@ -5,6 +5,8 @@ import { useGetUserID } from "../hooks/useGetUserID"; // Get Current UserID
 
 import { useCookies } from "react-cookie";
 
+import './home.css';
+
 
 export const Home = () => {
   const [appointments, setAppointments] = useState([]);
@@ -87,7 +89,11 @@ export const Home = () => {
   
   return (
     <div>
-      <select onChange={handleFilterChange}>
+      <div className="background-container">
+      </div>
+
+      <div id="center">
+      <select id="Select" onChange={handleFilterChange}>
         <option value="all">All Appointments</option>
         {appointments.map((appointment) => (
           <option key={appointment._id} value={appointment._id}>
@@ -95,15 +101,20 @@ export const Home = () => {
           </option>
         ))}
       </select>
+      <br></br>
+      <br></br>
+      <br></br>
+      <hr className="centered-line"></hr>
+      <br></br>
+      </div>
 
       <ul>
         {filteredAppointments.map((appointment) => ( 
           <li key={appointment._id}>
             <div>
               <h2>{appointment.name}</h2>
-              <p>{appointment.description}</p>
+              <h6>{appointment.description}</h6>
               <img src={appointment.imageUrl} alt={appointment.name} />
-              <p>Appointment Time: {appointment.appointmentTime} minutes</p>
               <form onSubmit={(e) => handleSubmit(appointment._id, e)}>
               {appointment.members?.map((member, index) => (
                 <div key={index}>
@@ -115,12 +126,20 @@ export const Home = () => {
                             />
                 </div>
               ))}
-              <button type="submit">保存</button>
-            </form>
+              <h5>{appointment.instructions}</h5>
+              <button type="submit" id="btn">Reserve</button>
+              <br></br>
+              <br></br>
+              <br></br>
+              <hr className="centered-line"></hr>
+              <br></br>
+            </form>              
             </div>
+            
           </li>
         ))}
       </ul>
+
     </div>
   );
 };

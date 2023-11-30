@@ -54,6 +54,10 @@ export const SavedAppointments = () => {
                     ))}
                   </tbody>
                 </table>
+                <br></br>
+                <br></br>
+                <hr className="centered-line"></hr>
+                <br></br>
               </div>
             </li>
           ))}
